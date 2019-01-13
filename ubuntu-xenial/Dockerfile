@@ -1,8 +1,7 @@
 FROM ubuntu:16.04
 
-RUN apt-get update
+RUN apt-get update && apt-get -y install libudev-dev
 RUN apt-get -y install \
-    libudev-dev \
     libblkid-dev \
     libsnappy-dev \
     libcurl4-openssl-dev \
