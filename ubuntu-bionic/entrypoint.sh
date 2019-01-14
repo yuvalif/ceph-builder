@@ -1,5 +1,5 @@
 cd ceph
-BUILD_DIR=build-ubuntu-xenial
+BUILD_DIR=build-ubuntu-bionic
 mkdir -p $BUILD_DIR
 cd $BUILD_DIR
 
