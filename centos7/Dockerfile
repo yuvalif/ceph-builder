@@ -12,6 +12,8 @@ RUN yum -y install cmake3
 RUN ln -s /usr/bin/cmake3 /usr/bin/cmake
 COPY ./entrypoint.sh /entrypoint.sh
 COPY ./build.sh /build.sh
+RUN rm -f ceph.spec.in
+RUN rm -f install-deps.sh
 
 # build ceph
 CMD ["./entrypoint.sh"]

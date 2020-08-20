@@ -7,9 +7,11 @@ RUN dnf -y install dnf-plugins-core
 COPY ./install-deps.sh /install-deps.sh
 COPY ./ceph.spec.in /ceph.spec.in
 RUN /install-deps.sh
-RUN yum -y install python2-devel
-RUN yum -y install python2-Cython
+RUN dnf -y install python2-devel
+RUN dnf -y install python2-Cython
 COPY ./entrypoint.sh /entrypoint.sh
+RUN rm -f ceph.spec.in
+RUN rm -f install-deps.sh
 
 # build ceph
 CMD ["./entrypoint.sh"]

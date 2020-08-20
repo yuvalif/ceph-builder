@@ -13,6 +13,8 @@ RUN /install-deps.sh
 RUN yum -y install python2-devel
 RUN yum -y install python2-Cython
 COPY ./entrypoint.sh /entrypoint.sh
+RUN rm -f ceph.spec.in
+RUN rm -f install-deps.sh
 
 # build ceph
 CMD ["./entrypoint.sh"]
