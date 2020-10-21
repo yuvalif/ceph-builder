@@ -1,8 +1,10 @@
 # ceph-builder
 Docker files for building the [ceph](https://github.com/ceph/ceph) project under different OSs and version.
 
+> Before you start please install `podman` (e.g. `sudo dnf install podman`)
+
 - To build all images use: `make image`
-- To build ceph inside these images use `make build`
+- To build ceph inside these images use `make build`. Please set the `CEPH_DIR` env variable to point to where the ceph code tree
 - To build a specific target, run the above commands inside the target's directory
 - To build the images and ceph manually use the following commands from inside the different subdirectories:
 
