@@ -18,7 +18,7 @@ podman build . -t <image name>
 - run ``do_cmake.sh`` inside the ceph directory
 - build ceph inside the container
 ```
-podman run --privileged --mount type=bind,src=/path/to/ceph,dst=/ceph --mount type=volume,src=<volume name>,dst=/ceph/build <image name>
+podman run --rm --privileged --mount type=bind,src=/path/to/ceph,dst=/ceph --mount type=volume,src=<volume name>,dst=/ceph/build <image name>
 ```
 > notes:
 > - that the ``build`` directories inside and outside the container are different
@@ -29,6 +29,6 @@ podman run --privileged --mount type=bind,src=/path/to/ceph,dst=/ceph --mount ty
 ## executing a binary built in the container
 For example, to run one of the unit tests use:
 ```
-podman run --privileged --mount type=bind,src=/path/to/ceph,dst=/ceph --mount type=volume,src=<volume name>,dst=/ceph/build <image name> /ceph/build/bin/unittest_rgw_amqp
+podman run --rm --privileged --mount type=bind,src=/path/to/ceph,dst=/ceph --mount type=volume,src=<volume name>,dst=/ceph/build <image name> /ceph/build/bin/unittest_rgw_amqp
 ```
 
