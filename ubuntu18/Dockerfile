@@ -9,7 +9,6 @@ COPY ./control /debian
 RUN /install-deps.sh
 RUN rm -rf debian
 RUN rm -f install-deps.sh
-RUN apt-get -y autoremove
 
 COPY ./entrypoint.sh /entrypoint.sh
 
