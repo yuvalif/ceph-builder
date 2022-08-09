@@ -18,3 +18,5 @@ rpm-image:
 build:
 	podman run --rm --privileged --mount type=bind,src=$(CEPH_DIR),dst=/ceph,bind-nonrecursive --mount type=volume,src=$(VOLUME_NAME),dst=/ceph/build $(IMAGE_NAME)
 
+clean:
+	podman run --rm --privileged --mount type=bind,src=$(CEPH_DIR),dst=/ceph,bind-nonrecursive --mount type=volume,src=$(VOLUME_NAME),dst=/ceph/build $(IMAGE_NAME) rm -rf /ceph/build/*
